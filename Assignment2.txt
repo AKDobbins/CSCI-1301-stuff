@@ -1,0 +1,48 @@
+using System;
+
+//Austen Dobbins
+//Assignment 2
+//9/5/19
+
+namespace HW2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int detergent;
+            int wine;
+            int cake;
+            int tax;
+            double detergentPrice = 12.95;
+            double winePrice = 24.95;
+            double cakePrice = 6.95;
+
+            Console.Write("Enter quantity of Detergent: ");
+            detergent = int.Parse(Console.ReadLine());
+            Console.Write("Enter quantity of Wine: ");
+            wine = int.Parse(Console.ReadLine());
+            Console.Write("Enter quantity of Cake:  ");
+            cake = int.Parse(Console.ReadLine());
+            Console.Write("Enter sales tax: ");
+            tax = int.Parse(Console.ReadLine());
+            Console.WriteLine("\nReciept:");
+
+            double sumDetergent = detergent * detergentPrice;
+            double sumWine = wine * winePrice;
+            double sumCake = cake * cakePrice;
+            double sumTotal = sumCake + sumDetergent + sumWine;
+            double sumTax = (Convert.ToDouble(tax) / 100) * sumTotal;
+
+            Console.WriteLine($"\nDetergent  \t\t {sumDetergent:c}");
+            Console.WriteLine($"Wine  \t\t\t {sumWine:c}");
+            Console.WriteLine($"Cake  \t\t\t {sumCake:c}");
+            Console.WriteLine($"Subtotal \t\t {sumTotal:c}");
+            Console.WriteLine($"Sales tax \t\t ({sumTax:c})");
+            Console.WriteLine("________________");
+            Console.WriteLine($"\nTotal \t\t\t {sumTax + sumTotal:c}");
+            Console.ReadKey()
+                ;
+        }
+    }
+}
