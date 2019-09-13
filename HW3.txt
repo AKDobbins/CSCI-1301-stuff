@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Class_Notes
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = "";
+            string cart = "";
+            bool will_to_continue = true;
+            while (will_to_continue == true)
+            {
+                if (input != "0")
+                {
+                    cart += "\n" + input;
+                    Console.Write("Enter an item to add to your shopping list or 0 to see the list: ");
+                    input = Console.ReadLine();
+                    continue;
+                }
+                else if (input == "0")
+                {
+                    will_to_continue = false;
+                }
+            }
+            if (cart == "\n")
+            {
+                Console.WriteLine("Your cart is empty.");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("\nYour shopping list: ");
+                Console.WriteLine($"{cart}");
+                Console.ReadKey();
+            }
+                
+                }
+            }
+        }
+    
+    
+
