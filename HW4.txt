@@ -1,0 +1,83 @@
+using System;
+
+namespace HW4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Numbers TestNumber = new Numbers();
+            TestNumber.readNumbers();
+        }
+    }
+    class Numbers
+    {
+        private int smallest;
+        private int largest;
+        bool will_to_continue = true;
+        private int count = 0;
+
+
+        public void setLargest(int large)
+        {
+
+            largest = large;
+        }
+        public int getLargest()
+        {
+            return largest;
+        }
+        public void setSmallest(int small)
+        {
+            smallest = small;
+        }
+        public int getSmallest()
+        {
+            return smallest;
+        }
+        public void readNumbers()
+        {
+            while (will_to_continue == true)
+            {
+                int input;
+                Console.Write("Please enter a positive number: ");
+                input = Convert.ToInt32(Console.ReadLine());
+
+                if (input < 0)
+                {
+                    will_to_continue = false;
+                    break;
+                }
+                if (input > largest)
+                {
+                    largest = input;
+                }
+                if (input < smallest)
+                {
+                    smallest = input;
+                }
+                if (input >= 0)
+                {
+                    count += 1;
+                }
+                if (count == 1)
+                {
+                    smallest = input;
+                }
+                
+                //if (count == 0)
+                //{
+                //will_to_continue = false;
+                //break;
+                //}
+                //continue;
+            }
+            Console.WriteLine("\nYour largest number was: " + largest);
+            Console.WriteLine("Your smallest number was: " + smallest);
+            Console.WriteLine("You entered " + count + " numbers.");
+        }
+
+    }
+
+
+}
