@@ -1,0 +1,41 @@
+using System;
+//Austen Dobbins
+//Homework 5
+//10/17/19
+
+namespace HW5
+{
+    class Addition
+    {
+        static void Main(string[] args)
+        {
+
+            int daysworked = 0;
+            double income = .01;
+            double sum = 0;
+            bool check = true;
+
+            while (check)
+            {
+                Console.Write("Enter the total number of days susan worked: ");
+                daysworked = Convert.ToInt32(Console.ReadLine());
+                if (daysworked >= 0)
+                    check = false;
+
+                for (int i = 0; i < daysworked; i++)
+                {
+                    if (i < 14)
+                    {
+                        sum = income + (2 * sum);
+                    }
+                    else
+                    {
+                        sum = sum + 10.50;
+                    }
+                }
+            }
+            Console.WriteLine($"Susan will be paid {sum:c} for {daysworked} days of work.");
+            Console.ReadKey();
+        }
+    }
+}
