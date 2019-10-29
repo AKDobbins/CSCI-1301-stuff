@@ -1,0 +1,42 @@
+using System;
+//Austen Dobbins
+//Assignment 6
+//10/31/19
+
+namespace HW6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x;
+            int y;
+            int[] myNumbers = new int[5];
+
+            for(int i=0; i<myNumbers.Length; i++)
+            {
+                Console.Write($"Enter number {i+1}: ");
+                x = int.Parse(Console.ReadLine());
+
+                if (x > 32 && x < 127)
+                {
+                    myNumbers[i] = x;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                    i--;
+                }
+                
+            }
+            Console.WriteLine("\nDecimal Character ");
+
+            for (int i = 0; i < myNumbers.Length; i++)
+            {
+                y = myNumbers[i];
+                Console.WriteLine($"{y,2}"+"\t"+(Convert.ToChar(y)));
+            }
+            Console.ReadKey();
+        }
+    }
+}
